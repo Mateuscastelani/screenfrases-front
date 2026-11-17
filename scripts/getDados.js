@@ -1,5 +1,5 @@
 // URL base da API
-const baseURL = 'http://localhost:8080';
+const baseURL = 'https://screenfrases-api.onrender.com';
 
 export default function getDados(endpoint) {
     return fetch(`${baseURL}${endpoint}`)
