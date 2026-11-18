@@ -1,7 +1,9 @@
 import getDados from "./getDados.js";
+import { adicionarFrase } from './gerenciarDados.js';
 
 const btnSortear = document.querySelector('.btn-sortear');
 const fichaDescricao = document.getElementById('ficha-descricao');
+
 
 function carregarInfoSerie() {
   getDados(`/series/frases`)
@@ -23,5 +25,6 @@ function carregarInfoSerie() {
 }
 
 
-window.onload = carregarInfoSerie();
+
+window.onload = carregarInfoSerie;
 btnSortear.addEventListener('click', carregarInfoSerie);
