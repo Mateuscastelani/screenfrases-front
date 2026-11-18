@@ -7,40 +7,46 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div style="padding: 2em; color: white;">
-        <h1>Painel de Administração</h1>
-        <a href="index.html" style="color: #409ecd; margin-bottom: 20px; display: inline-block;">⬅ Voltar ao site</a>
+    <main class="admin-container">
+        <header class="admin-header">
+            <div>
+                <h1>Painel de Administração</h1>
+                <p class="admin-subtitulo">Gerencie as frases clássicas do ScreenFrases</p>
+            </div>
+            <a href="index.html" class="btn-voltar">← Voltar ao site</a>
+        </header>
 
-        <!-- Formulário para adicionar nova frase -->
-        <div style="background: rgba(0,0,0,0.5); padding: 20px; border-radius: 10px; margin-bottom: 30px;">
+        <section class="form-card">
             <h2>Adicionar Nova Frase</h2>
-            <form id="form-frase" style="display: flex; flex-direction: column; gap: 10px; max-width: 500px; margin-top: 15px;">
+            <form id="form-frase" class="admin-form">
                 <input type="text" id="titulo" placeholder="Título da Série/Filme" required>
                 <input type="text" id="frase" placeholder="A Frase Clássica" required>
                 <input type="text" id="personagem" placeholder="Personagem" required>
                 <input type="url" id="poster" placeholder="Link da Imagem (Poster)" required>
                 <button type="submit" class="btn-salvar">Salvar Frase</button>
             </form>
-        </div>
+        </section>
 
-        <!-- Tabela onde as frases serão listadas -->
-        <h2>Frases Cadastradas</h2>
-        <table style="width: 100%; text-align: left; margin-top: 15px; border-collapse: collapse;">
-            <thead>
-                <tr style="border-bottom: 2px solid #409ecd;">
-                    <th>ID</th>
-                    <th>Título</th>
-                    <th>Personagem</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody id="tabela-corpo">
-                <!-- O JavaScript vai injetar as linhas aqui -->
-            </tbody>
-        </table>
-    </div>
+        <section class="tabela-section">
+            <h2>Frases Cadastradas</h2>
+            <div class="tabela-wrapper">
+                <table class="tabela-frases">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Título</th>
+                            <th>Personagem</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-corpo">
+                        <!-- Preenchido pelo admin.js -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
 
-    <!-- Script dedicado a esta página -->
     <script type="module" src="./scripts/admin.js"></script>
 </body>
 </html>

@@ -25,12 +25,12 @@ async function carregarTabela() {
         tr.style.borderBottom = '1px solid rgba(255,255,255,0.2)';
 
         tr.innerHTML = `
-            <td style="padding: 10px 0;">${frase.id}</td>
+            <td>${frase.id}</td>
             <td>${frase.titulo}</td>
             <td>${frase.personagem}</td>
-            <td>
-                <button class="btn-editar" style="cursor:pointer; margin-right: 8px;">Editar</button>
-                <button class="btn-apagar" style="cursor:pointer; color: #ff6b6b;">Apagar</button>
+            <td class="acoes-btn">
+                <button class="btn-editar">Editar</button>
+                <button class="btn-apagar">Apagar</button>
             </td>
         `;
         // botão Editar: joga os dados da linha de volta para o formulário

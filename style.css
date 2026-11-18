@@ -158,6 +158,262 @@ p {
   color: rgba(255, 255, 255, 0.6);
 }
 
+/* ===== PAINEL ADMINISTRATIVO ===== */
+.admin-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  color: white;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.admin-subtitulo {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.btn-voltar {
+  color: #409ecd;
+  text-decoration: none;
+  border: 1px solid #409ecd;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.btn-voltar:hover {
+  background-color: #409ecd;
+  color: #000;
+}
+
+/* Card do Formulário */
+.form-card {
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(64, 158, 205, 0.3);
+  padding: 25px;
+  border-radius: 16px;
+  margin-bottom: 40px;
+}
+
+.form-card h2 {
+  margin-bottom: 20px;
+}
+
+.admin-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.admin-form input {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(64, 158, 205, 0.6);
+  background-color: rgba(255, 255, 255, 0.08);
+  color: white;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.admin-form input:focus {
+  border-color: #409ecd;
+  background-color: rgba(255, 255, 255, 0.14);
+}
+
+.admin-form input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.btn-salvar {
+  grid-column: span 2;
+  justify-self: center;
+  margin-top: 10px;
+  padding: 12px 36px;
+  background-color: #0077b6;
+  color: white;
+  border: none;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-salvar:hover {
+  background-color: #409ecd;
+  transform: scale(1.03);
+}
+
+/* Tabela e Botões de Ação */
+.tabela-section h2 {
+  margin-bottom: 15px;
+}
+
+.tabela-wrapper {
+  overflow-x: auto; /* Permite rolar a tabela no celular sem quebrar a tela */
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 12px;
+  padding: 10px 15px;
+}
+
+.tabela-frases {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 550px;
+}
+
+.tabela-frases th {
+  padding: 12px 10px;
+  border-bottom: 2px solid #409ecd;
+  color: #409ecd;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.tabela-frases td {
+  padding: 14px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 15px;
+}
+
+.tabela-frases tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.acoes-btn {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-editar,
+.btn-apagar {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-editar {
+  background-color: #0077b6;
+  color: white;
+}
+
+.btn-editar:hover {
+  background-color: #409ecd;
+}
+
+.btn-apagar {
+  background-color: rgba(255, 77, 77, 0.2);
+  color: #ff6b6b;
+  border: 1px solid #ff6b6b;
+}
+
+.btn-apagar:hover {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+/* ===== RESPONSIVIDADE (CELULAR) ===== */
+@media (max-width: 768px) {
+  body {
+    padding: 1.5em;
+  }
+
+  .admin-form {
+    grid-template-columns: 1fr; /* Campos ficam um embaixo do outro */
+  }
+
+  .btn-salvar {
+    grid-column: span 1;
+    width: 100%;
+  }
+
+  .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Container da frase na página inicial */
+#ficha-descricao {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  margin-top: 40px;
+  max-width: 1000px;
+}
+
+/* Poster com tamanho fixo e sombra */
+#ficha-descricao img {
+  width: 240px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(64, 158, 205, 0.4);
+  flex-shrink: 0;
+}
+
+#ficha-descricao h2 {
+  font-size: 28px;
+  color: #409ecd;
+  margin-bottom: 16px;
+}
+
+/* Destaque principal na frase */
+.descricao-texto p:first-child {
+  font-size: 32px;
+  line-height: 1.4;
+  font-weight: 600;
+  color: #ffffff;
+  border-left: 5px solid #409ecd;
+  padding: 12px 20px;
+  background: rgba(64, 158, 205, 0.1);
+  border-radius: 0 12px 12px 0;
+  margin-bottom: 20px;
+}
+
+/* Nome do personagem mais discreto */
+.descricao-texto p:last-child {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Ajuste para celular */
+@media (max-width: 768px) {
+  #ficha-descricao {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  #ficha-descricao img {
+    width: 180px;
+    height: 260px;
+  }
+
+  .descricao-texto p:first-child {
+    font-size: 22px;
+    border-left: none;
+    border-top: 4px solid #409ecd;
+    border-radius: 0 0 12px 12px;
+  }
+}
+
 @media screen and (max-width: 900px) {
 
   .ficha-descricao {
